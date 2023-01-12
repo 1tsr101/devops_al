@@ -1,12 +1,12 @@
 
 from flask import Flask, jsonify, request
 app = Flask(__name__)
-app.config['SECRET_KEY']='d1a2f613fc4750a5c8ba526fc0cd4b9f'
+app.config['SECRET_KEY']='secret'
 
 from mailjet_rest import Client
 
-api_key = 'bddbdc633d8c5083470f410818cea07d'
-api_secret = 'd1a2f613fc4750a5c8ba526fc0cd4b9f'
+api_key = 'key'
+api_secret = 'secret'
 mailjet = Client(auth=(api_key, api_secret), version='v3.1')
 
 @app.route('/service')
@@ -24,7 +24,7 @@ def sendEmail():
   'Messages': [
     {
       "From": {
-        "Email": "carciu.94anxhela@gmail.com",
+        "Email": "email",
         "Name": "Anxhela"
       },
       "To": [
